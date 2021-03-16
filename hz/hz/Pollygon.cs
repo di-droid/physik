@@ -9,17 +9,17 @@ namespace hz
 {
     class Pollygon : Figyru
     {
-        public Brush brush { get; set; }
+        private Brush brush { get; set; }
         
-        public PointF[] corners { get; set; } 
+        private PointF[] corners { get; set; } 
 
-        public Pollygon(float PenThickness, Color PenColor, Color FillColor, int numbersOfCorners, Point startpoint, float radius) : base(PenThickness, PenColor)
+        private Pollygon(float PenThickness, Color PenColor, Color FillColor, int numbersOfCorners, Point center, float radius) : base(PenThickness, PenColor)
         {
             brush = new SolidBrush(FillColor);
-            this.startpoint = startpoint;
+         //   this.corners = corners;
 
             double angle = Math.PI * 2 / numbersOfCorners;
-            corners = Enumerable.Range(0, numbersOfCorners).Select(i => PointF.Add(startpoint, new SizeF((float)Math.Sin(i * angle) * radius, (float)Math.Cos(i * angle) * radius))).ToArray();
+            corners = Enumerable.Range(0, numbersOfCorners).Select(i => PointF.Add(center, new SizeF((float)Math.Sin(i * angle) * radius, (float)Math.Cos(i * angle) * radius))).ToArray();
         }
 
         public override void Draw(Graphics graphics)

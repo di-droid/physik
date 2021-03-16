@@ -32,26 +32,26 @@ namespace hz
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblBrushColor = new System.Windows.Forms.Label();
+            this.lblFillColor = new System.Windows.Forms.Label();
+            this.lblNumOfCorners = new System.Windows.Forms.Label();
+            this.lblPenThick = new System.Windows.Forms.Label();
+            this.butDeserializ = new System.Windows.Forms.Button();
+            this.butSerializ = new System.Windows.Forms.Button();
+            this.numNumOfCorners = new System.Windows.Forms.NumericUpDown();
+            this.numPenThick = new System.Windows.Forms.NumericUpDown();
             this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFillColor = new System.Windows.Forms.Button();
+            this.btnPolygon = new System.Windows.Forms.Button();
+            this.btmEllipse = new System.Windows.Forms.Button();
+            this.btnRectangle = new System.Windows.Forms.Button();
+            this.btnBrokenLine = new System.Windows.Forms.Button();
+            this.btnLine = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumOfCorners)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPenThick)).BeginInit();
             this.SuspendLayout();
             // 
             // picture
@@ -66,93 +66,93 @@ namespace hz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.numericUpDown2);
-            this.panel1.Controls.Add(this.numericUpDown1);
+            this.panel1.Controls.Add(this.lblBrushColor);
+            this.panel1.Controls.Add(this.lblFillColor);
+            this.panel1.Controls.Add(this.lblNumOfCorners);
+            this.panel1.Controls.Add(this.lblPenThick);
+            this.panel1.Controls.Add(this.butDeserializ);
+            this.panel1.Controls.Add(this.butSerializ);
+            this.panel1.Controls.Add(this.numNumOfCorners);
+            this.panel1.Controls.Add(this.numPenThick);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnFillColor);
+            this.panel1.Controls.Add(this.btnPolygon);
+            this.panel1.Controls.Add(this.btmEllipse);
+            this.panel1.Controls.Add(this.btnRectangle);
+            this.panel1.Controls.Add(this.btnBrokenLine);
+            this.panel1.Controls.Add(this.btnLine);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 100);
             this.panel1.TabIndex = 1;
             // 
-            // label4
+            // lblBrushColor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(415, 65);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 25);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Brush color";
+            this.lblBrushColor.AutoSize = true;
+            this.lblBrushColor.Location = new System.Drawing.Point(415, 65);
+            this.lblBrushColor.Name = "lblBrushColor";
+            this.lblBrushColor.Size = new System.Drawing.Size(101, 25);
+            this.lblBrushColor.TabIndex = 14;
+            this.lblBrushColor.Text = "Brush color";
             // 
-            // label3
+            // lblFillColor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Fill color";
+            this.lblFillColor.AutoSize = true;
+            this.lblFillColor.Location = new System.Drawing.Point(331, 65);
+            this.lblFillColor.Name = "lblFillColor";
+            this.lblFillColor.Size = new System.Drawing.Size(78, 25);
+            this.lblFillColor.TabIndex = 13;
+            this.lblFillColor.Text = "Fill color";
             // 
-            // label2
+            // lblNumOfCorners
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(544, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 25);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Number of corners";
+            this.lblNumOfCorners.AutoSize = true;
+            this.lblNumOfCorners.Location = new System.Drawing.Point(544, 50);
+            this.lblNumOfCorners.Name = "lblNumOfCorners";
+            this.lblNumOfCorners.Size = new System.Drawing.Size(162, 25);
+            this.lblNumOfCorners.TabIndex = 12;
+            this.lblNumOfCorners.Text = "Number of corners";
             // 
-            // label1
+            // lblPenThick
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(544, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 25);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Pen thickness";
+            this.lblPenThick.AutoSize = true;
+            this.lblPenThick.Location = new System.Drawing.Point(544, 18);
+            this.lblPenThick.Name = "lblPenThick";
+            this.lblPenThick.Size = new System.Drawing.Size(117, 25);
+            this.lblPenThick.TabIndex = 11;
+            this.lblPenThick.Text = "Pen thickness";
             // 
-            // button9
+            // butDeserializ
             // 
-            this.button9.Location = new System.Drawing.Point(941, 49);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(143, 34);
-            this.button9.TabIndex = 10;
-            this.button9.Text = "Deserialization";
-            this.button9.UseVisualStyleBackColor = true;
+            this.butDeserializ.Location = new System.Drawing.Point(941, 49);
+            this.butDeserializ.Name = "butDeserializ";
+            this.butDeserializ.Size = new System.Drawing.Size(143, 34);
+            this.butDeserializ.TabIndex = 10;
+            this.butDeserializ.Text = "Deserialization";
+            this.butDeserializ.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // butSerializ
             // 
-            this.button8.Location = new System.Drawing.Point(941, 9);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(143, 34);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Serialization";
-            this.button8.UseVisualStyleBackColor = true;
+            this.butSerializ.Location = new System.Drawing.Point(941, 9);
+            this.butSerializ.Name = "butSerializ";
+            this.butSerializ.Size = new System.Drawing.Size(143, 34);
+            this.butSerializ.TabIndex = 9;
+            this.butSerializ.Text = "Serialization";
+            this.butSerializ.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown2
+            // numNumOfCorners
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(712, 49);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(59, 31);
-            this.numericUpDown2.TabIndex = 8;
+            this.numNumOfCorners.Location = new System.Drawing.Point(712, 49);
+            this.numNumOfCorners.Name = "numNumOfCorners";
+            this.numNumOfCorners.Size = new System.Drawing.Size(59, 31);
+            this.numNumOfCorners.TabIndex = 8;
             // 
-            // numericUpDown1
+            // numPenThick
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(712, 12);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 31);
-            this.numericUpDown1.TabIndex = 7;
+            this.numPenThick.Location = new System.Drawing.Point(712, 12);
+            this.numPenThick.Name = "numPenThick";
+            this.numPenThick.Size = new System.Drawing.Size(59, 31);
+            this.numPenThick.TabIndex = 7;
             // 
             // button7
             // 
@@ -163,59 +163,59 @@ namespace hz
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button6
+            // btnFillColor
             // 
-            this.button6.Location = new System.Drawing.Point(339, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(50, 50);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnFillColor.Location = new System.Drawing.Point(339, 12);
+            this.btnFillColor.Name = "btnFillColor";
+            this.btnFillColor.Size = new System.Drawing.Size(50, 50);
+            this.btnFillColor.TabIndex = 5;
+            this.btnFillColor.UseVisualStyleBackColor = true;
+            this.btnFillColor.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // btnPolygon
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(241, 25);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 50);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnPolygon.Image = ((System.Drawing.Image)(resources.GetObject("btnPolygon.Image")));
+            this.btnPolygon.Location = new System.Drawing.Point(241, 25);
+            this.btnPolygon.Name = "btnPolygon";
+            this.btnPolygon.Size = new System.Drawing.Size(50, 50);
+            this.btnPolygon.TabIndex = 4;
+            this.btnPolygon.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btmEllipse
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(185, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 50);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btmEllipse.Image = ((System.Drawing.Image)(resources.GetObject("btmEllipse.Image")));
+            this.btmEllipse.Location = new System.Drawing.Point(185, 25);
+            this.btmEllipse.Name = "btmEllipse";
+            this.btmEllipse.Size = new System.Drawing.Size(50, 50);
+            this.btmEllipse.TabIndex = 3;
+            this.btmEllipse.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRectangle
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(129, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRectangle.Image = ((System.Drawing.Image)(resources.GetObject("btnRectangle.Image")));
+            this.btnRectangle.Location = new System.Drawing.Point(129, 23);
+            this.btnRectangle.Name = "btnRectangle";
+            this.btnRectangle.Size = new System.Drawing.Size(50, 50);
+            this.btnRectangle.TabIndex = 2;
+            this.btnRectangle.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBrokenLine
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(73, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBrokenLine.Image = ((System.Drawing.Image)(resources.GetObject("btnBrokenLine.Image")));
+            this.btnBrokenLine.Location = new System.Drawing.Point(73, 23);
+            this.btnBrokenLine.Name = "btnBrokenLine";
+            this.btnBrokenLine.Size = new System.Drawing.Size(50, 50);
+            this.btnBrokenLine.TabIndex = 1;
+            this.btnBrokenLine.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnLine
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(17, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLine.Image = ((System.Drawing.Image)(resources.GetObject("btnLine.Image")));
+            this.btnLine.Location = new System.Drawing.Point(17, 23);
+            this.btnLine.Name = "btnLine";
+            this.btnLine.Size = new System.Drawing.Size(50, 50);
+            this.btnLine.TabIndex = 0;
+            this.btnLine.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -233,8 +233,8 @@ namespace hz
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNumOfCorners)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPenThick)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,22 +243,22 @@ namespace hz
 
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btmEllipse;
+        private System.Windows.Forms.Button btnRectangle;
+        private System.Windows.Forms.Button btnBrokenLine;
+        private System.Windows.Forms.Button btnLine;
+        private System.Windows.Forms.Button btnFillColor;
+        private System.Windows.Forms.Button btnPolygon;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label lblBrushColor;
+        private System.Windows.Forms.Label lblFillColor;
+        private System.Windows.Forms.Label lblNumOfCorners;
+        private System.Windows.Forms.Label lblPenThick;
+        private System.Windows.Forms.Button butDeserializ;
+        private System.Windows.Forms.Button butSerializ;
+        private System.Windows.Forms.NumericUpDown numNumOfCorners;
+        private System.Windows.Forms.NumericUpDown numPenThick;
     }
 }
 

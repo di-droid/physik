@@ -10,8 +10,6 @@ namespace hz
     public abstract class Figyru
     {
         public Pen pen { get; set; }
-        public Point startpoint { get; set; }
-        public Point finishpoint { get; set; }
 
         public Figyru(float PenThickness, Color PenColor)
         {

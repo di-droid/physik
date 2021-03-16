@@ -9,9 +9,9 @@ namespace hz
 {
     class BrokenLine : Figyru
     {
-        public Point[] points { get; set; }
+        private Point[] points { get; set; }
 
-        public BrokenLine(float PenThickness, Color PenColor, Point[] points) : base(PenThickness, PenColor)
+        private BrokenLine(float PenThickness, Color PenColor, Point[] points) : base(PenThickness, PenColor)
         {
             this.points = points;
         }

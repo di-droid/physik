@@ -22,9 +22,10 @@ namespace hz
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                button6.BackColor = colorDialog1.Color;
+                btnFillColor.BackColor = colorDialog1.Color;
             }
         }
+
 
         private void button7_Click(object sender, EventArgs e)
         {

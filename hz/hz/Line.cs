@@ -9,7 +9,9 @@ namespace hz
 {
     class Line : Figyru
     {
-        public Line(float PenThickness, Color PenColor, Point startpoint, Point finishpoint) : base(PenThickness, PenColor)
+        private Point startpoint { get; set; }
+        private Point finishpoint { get; set; }
+        private Line(float PenThickness, Color PenColor, Point startpoint, Point finishpoint) : base(PenThickness, PenColor)
         {
             this.startpoint = startpoint;
             this.finishpoint = finishpoint;
@@ -18,6 +20,6 @@ namespace hz
         public override void Draw(Graphics graphics) 
         {
             graphics.DrawLine(pen, startpoint, finishpoint);
-        }
+        }  
     }
 }

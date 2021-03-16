@@ -9,9 +9,12 @@ namespace hz
 {
     class Rectangle : Figyru
     {
-        public Brush brush { get; set; }
+        private Brush brush { get; set; }
+        private Point startpoint { get; set; }
+        private Point finishpoint { get; set; }
 
-        public Rectangle (float PenThickness, Color PenColor, Color FillColor, Point startpoint, Point finishpoint) : base(PenThickness, PenColor)
+
+        private Rectangle (float PenThickness, Color PenColor, Color FillColor, Point startpoint, Point finishpoint) : base(PenThickness, PenColor)
         {
             brush = new SolidBrush(FillColor);
             this.startpoint = startpoint;
