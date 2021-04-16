@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 
 namespace hz
 {
-    class BrokenLine : Figyru
+    public class BrokenLine : Figyru
     {
-        private Point[] points { get; set; }
 
-        private BrokenLine(float PenThickness, Color PenColor, Point[] points) : base(PenThickness, PenColor)
-        {
-            this.points = points;
-        }
+        public BrokenLine(float PenThickness, Color PenColor) : base(PenThickness, PenColor) { }
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawPolygon(pen, points);
+            graphics.DrawLines(pen, points);
         }
     }
 }

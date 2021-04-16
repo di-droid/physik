@@ -32,6 +32,7 @@ namespace hz
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSimplePolygon = new System.Windows.Forms.Button();
             this.lblBrushColor = new System.Windows.Forms.Label();
             this.lblFillColor = new System.Windows.Forms.Label();
             this.lblNumOfCorners = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@ namespace hz
             this.butSerializ = new System.Windows.Forms.Button();
             this.numNumOfCorners = new System.Windows.Forms.NumericUpDown();
             this.numPenThick = new System.Windows.Forms.NumericUpDown();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnBrushColor = new System.Windows.Forms.Button();
             this.btnFillColor = new System.Windows.Forms.Button();
             this.btnPolygon = new System.Windows.Forms.Button();
             this.btmEllipse = new System.Windows.Forms.Button();
@@ -62,10 +63,16 @@ namespace hz
             this.picture.Size = new System.Drawing.Size(1234, 546);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
+            this.picture.Paint += new System.Windows.Forms.PaintEventHandler(this.picture_Paint);
+            this.picture.MouseClick += new System.Windows.Forms.MouseEventHandler(this.picture_MouseClick);
+            this.picture.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picture_MouseDown);
+            this.picture.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picture_MouseMove);
+            this.picture.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picture_MouseUp);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
+            this.panel1.Controls.Add(this.btnSimplePolygon);
             this.panel1.Controls.Add(this.lblBrushColor);
             this.panel1.Controls.Add(this.lblFillColor);
             this.panel1.Controls.Add(this.lblNumOfCorners);
@@ -74,7 +81,7 @@ namespace hz
             this.panel1.Controls.Add(this.butSerializ);
             this.panel1.Controls.Add(this.numNumOfCorners);
             this.panel1.Controls.Add(this.numPenThick);
-            this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.btnBrushColor);
             this.panel1.Controls.Add(this.btnFillColor);
             this.panel1.Controls.Add(this.btnPolygon);
             this.panel1.Controls.Add(this.btmEllipse);
@@ -86,10 +93,20 @@ namespace hz
             this.panel1.Size = new System.Drawing.Size(1280, 100);
             this.panel1.TabIndex = 1;
             // 
+            // btnSimplePolygon
+            // 
+            this.btnSimplePolygon.Image = ((System.Drawing.Image)(resources.GetObject("btnSimplePolygon.Image")));
+            this.btnSimplePolygon.Location = new System.Drawing.Point(297, 25);
+            this.btnSimplePolygon.Name = "btnSimplePolygon";
+            this.btnSimplePolygon.Size = new System.Drawing.Size(50, 50);
+            this.btnSimplePolygon.TabIndex = 15;
+            this.btnSimplePolygon.UseVisualStyleBackColor = true;
+            this.btnSimplePolygon.Click += new System.EventHandler(this.btnSimplePolygon_Click);
+            // 
             // lblBrushColor
             // 
             this.lblBrushColor.AutoSize = true;
-            this.lblBrushColor.Location = new System.Drawing.Point(415, 65);
+            this.lblBrushColor.Location = new System.Drawing.Point(487, 65);
             this.lblBrushColor.Name = "lblBrushColor";
             this.lblBrushColor.Size = new System.Drawing.Size(101, 25);
             this.lblBrushColor.TabIndex = 14;
@@ -98,7 +115,7 @@ namespace hz
             // lblFillColor
             // 
             this.lblFillColor.AutoSize = true;
-            this.lblFillColor.Location = new System.Drawing.Point(331, 65);
+            this.lblFillColor.Location = new System.Drawing.Point(403, 65);
             this.lblFillColor.Name = "lblFillColor";
             this.lblFillColor.Size = new System.Drawing.Size(78, 25);
             this.lblFillColor.TabIndex = 13;
@@ -107,7 +124,7 @@ namespace hz
             // lblNumOfCorners
             // 
             this.lblNumOfCorners.AutoSize = true;
-            this.lblNumOfCorners.Location = new System.Drawing.Point(544, 50);
+            this.lblNumOfCorners.Location = new System.Drawing.Point(616, 55);
             this.lblNumOfCorners.Name = "lblNumOfCorners";
             this.lblNumOfCorners.Size = new System.Drawing.Size(162, 25);
             this.lblNumOfCorners.TabIndex = 12;
@@ -116,7 +133,7 @@ namespace hz
             // lblPenThick
             // 
             this.lblPenThick.AutoSize = true;
-            this.lblPenThick.Location = new System.Drawing.Point(544, 18);
+            this.lblPenThick.Location = new System.Drawing.Point(616, 14);
             this.lblPenThick.Name = "lblPenThick";
             this.lblPenThick.Size = new System.Drawing.Size(117, 25);
             this.lblPenThick.TabIndex = 11;
@@ -142,34 +159,58 @@ namespace hz
             // 
             // numNumOfCorners
             // 
-            this.numNumOfCorners.Location = new System.Drawing.Point(712, 49);
+            this.numNumOfCorners.Location = new System.Drawing.Point(784, 49);
+            this.numNumOfCorners.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
             this.numNumOfCorners.Name = "numNumOfCorners";
             this.numNumOfCorners.Size = new System.Drawing.Size(59, 31);
             this.numNumOfCorners.TabIndex = 8;
+            this.numNumOfCorners.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numNumOfCorners.ValueChanged += new System.EventHandler(this.numNumOfCorners_ValueChanged);
             // 
             // numPenThick
             // 
-            this.numPenThick.Location = new System.Drawing.Point(712, 12);
+            this.numPenThick.Location = new System.Drawing.Point(784, 9);
+            this.numPenThick.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numPenThick.Name = "numPenThick";
             this.numPenThick.Size = new System.Drawing.Size(59, 31);
             this.numPenThick.TabIndex = 7;
+            this.numPenThick.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPenThick.ValueChanged += new System.EventHandler(this.numPenThick_ValueChanged);
             // 
-            // button7
+            // btnBrushColor
             // 
-            this.button7.Location = new System.Drawing.Point(436, 12);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(50, 50);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnBrushColor.BackColor = System.Drawing.Color.Black;
+            this.btnBrushColor.Location = new System.Drawing.Point(508, 12);
+            this.btnBrushColor.Name = "btnBrushColor";
+            this.btnBrushColor.Size = new System.Drawing.Size(50, 50);
+            this.btnBrushColor.TabIndex = 6;
+            this.btnBrushColor.UseVisualStyleBackColor = false;
+            this.btnBrushColor.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnFillColor
             // 
-            this.btnFillColor.Location = new System.Drawing.Point(339, 12);
+            this.btnFillColor.BackColor = System.Drawing.Color.White;
+            this.btnFillColor.Location = new System.Drawing.Point(418, 12);
             this.btnFillColor.Name = "btnFillColor";
             this.btnFillColor.Size = new System.Drawing.Size(50, 50);
             this.btnFillColor.TabIndex = 5;
-            this.btnFillColor.UseVisualStyleBackColor = true;
+            this.btnFillColor.UseVisualStyleBackColor = false;
             this.btnFillColor.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnPolygon
@@ -180,6 +221,7 @@ namespace hz
             this.btnPolygon.Size = new System.Drawing.Size(50, 50);
             this.btnPolygon.TabIndex = 4;
             this.btnPolygon.UseVisualStyleBackColor = true;
+            this.btnPolygon.Click += new System.EventHandler(this.btnPolygon_Click);
             // 
             // btmEllipse
             // 
@@ -189,6 +231,7 @@ namespace hz
             this.btmEllipse.Size = new System.Drawing.Size(50, 50);
             this.btmEllipse.TabIndex = 3;
             this.btmEllipse.UseVisualStyleBackColor = true;
+            this.btmEllipse.Click += new System.EventHandler(this.btmEllipse_Click);
             // 
             // btnRectangle
             // 
@@ -198,6 +241,7 @@ namespace hz
             this.btnRectangle.Size = new System.Drawing.Size(50, 50);
             this.btnRectangle.TabIndex = 2;
             this.btnRectangle.UseVisualStyleBackColor = true;
+            this.btnRectangle.Click += new System.EventHandler(this.btnRectangle_Click);
             // 
             // btnBrokenLine
             // 
@@ -207,6 +251,7 @@ namespace hz
             this.btnBrokenLine.Size = new System.Drawing.Size(50, 50);
             this.btnBrokenLine.TabIndex = 1;
             this.btnBrokenLine.UseVisualStyleBackColor = true;
+            this.btnBrokenLine.Click += new System.EventHandler(this.btnBrokenLine_Click);
             // 
             // btnLine
             // 
@@ -216,6 +261,7 @@ namespace hz
             this.btnLine.Size = new System.Drawing.Size(50, 50);
             this.btnLine.TabIndex = 0;
             this.btnLine.UseVisualStyleBackColor = true;
+            this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
             // 
             // Form1
             // 
@@ -250,7 +296,7 @@ namespace hz
         private System.Windows.Forms.Button btnFillColor;
         private System.Windows.Forms.Button btnPolygon;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnBrushColor;
         private System.Windows.Forms.Label lblBrushColor;
         private System.Windows.Forms.Label lblFillColor;
         private System.Windows.Forms.Label lblNumOfCorners;
@@ -259,6 +305,7 @@ namespace hz
         private System.Windows.Forms.Button butSerializ;
         private System.Windows.Forms.NumericUpDown numNumOfCorners;
         private System.Windows.Forms.NumericUpDown numPenThick;
+        private System.Windows.Forms.Button btnSimplePolygon;
     }
 }
 
