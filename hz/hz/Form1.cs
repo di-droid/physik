@@ -46,7 +46,7 @@ namespace hz
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 btnFillColor.BackColor = colorDialog1.Color;
-                penColor = btnFillColor.BackColor;
+                fillColor = btnFillColor.BackColor;
             }
         }
 
@@ -56,7 +56,7 @@ namespace hz
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 btnBrushColor.BackColor = colorDialog1.Color;
-                fillColor = btnBrushColor.BackColor;
+                penColor = btnBrushColor.BackColor;
             }
 
         }
