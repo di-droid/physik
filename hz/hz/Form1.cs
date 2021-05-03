@@ -15,7 +15,8 @@ namespace hz
         private ICreator creator;
         private Figyru figyru;
         private List<Point> points;
-        private LF lf;
+        private Undo listFigure;
+        private Redo figureStack;
         private bool drawing;
         private Point startPoint;
         private Point finishPoint;
@@ -28,10 +29,11 @@ namespace hz
 
         public Form1()
         {
+            listFigure = new Undo();
+            figureStack = new Redo();
             drawing = false;
             points = new List<Point>();
-            lf = new LF();
-
+           
             penColor = Color.Black;
             fillColor = Color.White;
 
@@ -116,7 +118,7 @@ namespace hz
 
         private void picture_Paint(object sender, PaintEventArgs e)
         {       
-            lf.Drawing(e.Graphics);
+            listFigure.Drawing(e.Graphics);
             if (drawing)
             {
                 figyru.Draw(e.Graphics);
@@ -158,7 +160,8 @@ namespace hz
                 if (startPoint != finishPoint)
                 {
                     points[1] = finishPoint;
-                    lf.Dobavit(figyru);
+                    listFigure.Add(figyru);
+                    figureStack.CleanStack();
                 }
             }
         }
@@ -197,10 +200,30 @@ namespace hz
                     else if (e.Button == MouseButtons.Right)
                     {
                         drawing = !drawing;
-                        lf.Dobavit(figyru);
+                        listFigure.Add(figyru);
+                        figureStack.CleanStack();
                     }
 
                 }
+            }
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if (listFigure.IsEmpty())
+            {
+                figureStack.Push(listFigure.Remove());
+                picture.Refresh();
+
+            }       
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            if (figureStack.IsEmpty())
+            {
+                listFigure.Add(figureStack.Pop());
+                picture.Refresh();
             }
         }
     }

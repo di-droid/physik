@@ -32,9 +32,11 @@ namespace hz
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.picture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.btnSimplePolygon = new System.Windows.Forms.Button();
             this.lblBrushColor = new System.Windows.Forms.Label();
-            this.lblFillColor = new System.Windows.Forms.Label();
+            this.lblistFigureillColor = new System.Windows.Forms.Label();
             this.lblNumOfCorners = new System.Windows.Forms.Label();
             this.lblPenThick = new System.Windows.Forms.Label();
             this.butDeserializ = new System.Windows.Forms.Button();
@@ -72,9 +74,11 @@ namespace hz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
+            this.panel1.Controls.Add(this.btnRedo);
+            this.panel1.Controls.Add(this.btnUndo);
             this.panel1.Controls.Add(this.btnSimplePolygon);
             this.panel1.Controls.Add(this.lblBrushColor);
-            this.panel1.Controls.Add(this.lblFillColor);
+            this.panel1.Controls.Add(this.lblistFigureillColor);
             this.panel1.Controls.Add(this.lblNumOfCorners);
             this.panel1.Controls.Add(this.lblPenThick);
             this.panel1.Controls.Add(this.butDeserializ);
@@ -92,6 +96,26 @@ namespace hz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1280, 100);
             this.panel1.TabIndex = 1;
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.Location = new System.Drawing.Point(1141, 49);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(89, 31);
+            this.btnRedo.TabIndex = 17;
+            this.btnRedo.Text = "Redo";
+            this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.Location = new System.Drawing.Point(1141, 12);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(89, 31);
+            this.btnUndo.TabIndex = 16;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnSimplePolygon
             // 
@@ -112,14 +136,14 @@ namespace hz
             this.lblBrushColor.TabIndex = 14;
             this.lblBrushColor.Text = "Brush color";
             // 
-            // lblFillColor
+            // lblistFigureillColor
             // 
-            this.lblFillColor.AutoSize = true;
-            this.lblFillColor.Location = new System.Drawing.Point(403, 65);
-            this.lblFillColor.Name = "lblFillColor";
-            this.lblFillColor.Size = new System.Drawing.Size(78, 25);
-            this.lblFillColor.TabIndex = 13;
-            this.lblFillColor.Text = "Fill color";
+            this.lblistFigureillColor.AutoSize = true;
+            this.lblistFigureillColor.Location = new System.Drawing.Point(403, 65);
+            this.lblistFigureillColor.Name = "lblistFigureillColor";
+            this.lblistFigureillColor.Size = new System.Drawing.Size(78, 25);
+            this.lblistFigureillColor.TabIndex = 13;
+            this.lblistFigureillColor.Text = "Fill color";
             // 
             // lblNumOfCorners
             // 
@@ -298,7 +322,7 @@ namespace hz
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btnBrushColor;
         private System.Windows.Forms.Label lblBrushColor;
-        private System.Windows.Forms.Label lblFillColor;
+        private System.Windows.Forms.Label lblistFigureillColor;
         private System.Windows.Forms.Label lblNumOfCorners;
         private System.Windows.Forms.Label lblPenThick;
         private System.Windows.Forms.Button butDeserializ;
@@ -306,6 +330,8 @@ namespace hz
         private System.Windows.Forms.NumericUpDown numNumOfCorners;
         private System.Windows.Forms.NumericUpDown numPenThick;
         private System.Windows.Forms.Button btnSimplePolygon;
+        private System.Windows.Forms.Button btnRedo;
+        private System.Windows.Forms.Button btnUndo;
     }
 }
 
