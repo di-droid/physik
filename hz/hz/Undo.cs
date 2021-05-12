@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 
 namespace hz
 {
+    [DataContract]
     public class Undo
     {
+        [DataMember]
         private List<Figyru> figureList;
         public void Add(Figyru figyru)
         {

@@ -27,8 +27,12 @@ namespace hz
 
         private int numOfCorners;
 
+        private DeSerialization deSerialization;
+
         public Form1()
         {
+            deSerialization = new DeSerialization();
+
             listFigure = new Undo();
             figureStack = new Redo();
             drawing = false;
@@ -142,10 +146,6 @@ namespace hz
         private void numPenThick_ValueChanged(object sender, EventArgs e)
         {
             penThickness = (float)numPenThick.Value;
-            if (figyru != null)
-            {
-                figyru.pen = new Pen(penColor, penThickness);
-            }
         }
 
         private void picture_MouseUp(object sender, MouseEventArgs e)
@@ -225,6 +225,17 @@ namespace hz
                 listFigure.Add(figureStack.Pop());
                 picture.Refresh();
             }
+        }
+
+        private void butSerializ_Click(object sender, EventArgs e)
+        {
+            deSerialization.Serialization(listFigure);
+        }
+
+        private void butDeserializ_Click(object sender, EventArgs e)
+        {
+            listFigure = deSerialization.Deserialization();
+            picture.Refresh();
         }
     }
 }

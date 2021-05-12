@@ -4,13 +4,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace hz
 {
+    [DataContract]
     public class Polygon : Figyru
     {
+        [DataMember]
         private Brush brush { get; set; }
+        [DataMember]
         private PointF[] corners;
+        [DataMember]
         public int numOfCorners;
 
 
@@ -21,6 +26,8 @@ namespace hz
 
         public override void Draw(Graphics graphics)
         {
+            SetPen();
+
             corners = new PointF[numOfCorners];
             corners[0] = points[1];
             PointF o = points[0];

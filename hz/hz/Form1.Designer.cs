@@ -119,7 +119,6 @@ namespace hz
             // 
             // btnSimplePolygon
             // 
-            this.btnSimplePolygon.Image = ((System.Drawing.Image)(resources.GetObject("btnSimplePolygon.Image")));
             this.btnSimplePolygon.Location = new System.Drawing.Point(297, 25);
             this.btnSimplePolygon.Name = "btnSimplePolygon";
             this.btnSimplePolygon.Size = new System.Drawing.Size(50, 50);
@@ -171,6 +170,7 @@ namespace hz
             this.butDeserializ.TabIndex = 10;
             this.butDeserializ.Text = "Deserialization";
             this.butDeserializ.UseVisualStyleBackColor = true;
+            this.butDeserializ.Click += new System.EventHandler(this.butDeserializ_Click);
             // 
             // butSerializ
             // 
@@ -180,6 +180,7 @@ namespace hz
             this.butSerializ.TabIndex = 9;
             this.butSerializ.Text = "Serialization";
             this.butSerializ.UseVisualStyleBackColor = true;
+            this.butSerializ.Click += new System.EventHandler(this.butSerializ_Click);
             // 
             // numNumOfCorners
             // 
@@ -239,7 +240,6 @@ namespace hz
             // 
             // btnPolygon
             // 
-            this.btnPolygon.Image = ((System.Drawing.Image)(resources.GetObject("btnPolygon.Image")));
             this.btnPolygon.Location = new System.Drawing.Point(241, 25);
             this.btnPolygon.Name = "btnPolygon";
             this.btnPolygon.Size = new System.Drawing.Size(50, 50);
@@ -249,7 +249,6 @@ namespace hz
             // 
             // btmEllipse
             // 
-            this.btmEllipse.Image = ((System.Drawing.Image)(resources.GetObject("btmEllipse.Image")));
             this.btmEllipse.Location = new System.Drawing.Point(185, 25);
             this.btmEllipse.Name = "btmEllipse";
             this.btmEllipse.Size = new System.Drawing.Size(50, 50);
@@ -269,7 +268,6 @@ namespace hz
             // 
             // btnBrokenLine
             // 
-            this.btnBrokenLine.Image = ((System.Drawing.Image)(resources.GetObject("btnBrokenLine.Image")));
             this.btnBrokenLine.Location = new System.Drawing.Point(73, 23);
             this.btnBrokenLine.Name = "btnBrokenLine";
             this.btnBrokenLine.Size = new System.Drawing.Size(50, 50);

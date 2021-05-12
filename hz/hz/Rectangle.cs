@@ -4,11 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace hz
 {
+    [DataContract]
     public class Rectangle : Figyru
     {
+        [DataMember]
         private Brush brush { get; set; }
 
         public Rectangle(float PenThickness, Color PenColor, Color FillColor) : base(PenThickness, PenColor) 
@@ -18,6 +21,8 @@ namespace hz
 
         public override void Draw(Graphics graphics)
         {
+            SetPen();
+
             Point LeftPoint = new Point(Math.Min(points[0].X, points[1].X), Math.Min(points[0].Y, points[1].Y));
             Point RightPoint = new Point(Math.Max(points[0].X, points[1].X), Math.Max(points[0].Y, points[1].Y));
 
