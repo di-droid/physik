@@ -28,6 +28,7 @@ namespace hz
         private int numOfCorners;
 
         private DeSerialization deSerialization;
+        private Plugin plugin;
 
         public Form1()
         {
@@ -37,7 +38,9 @@ namespace hz
             figureStack = new Redo();
             drawing = false;
             points = new List<Point>();
-           
+
+            plugin = new Plugin();
+
             penColor = Color.Black;
             fillColor = Color.White;
 
@@ -236,6 +239,19 @@ namespace hz
         {
             listFigure = deSerialization.Deserialization();
             picture.Refresh();
+        }
+
+        private void PluginButtonn_Click(object sender, EventArgs e)
+        {
+            string pluginName = plugin.LoadPlugin();
+            if (pluginName != "")
+                PluginComboBox.Items.Add(pluginName);
+        }
+
+        private void PluginComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string pluginName = PluginComboBox.GetItemText(PluginComboBox.SelectedItem);
+            creator = (ICreator)Activator.CreateInstance(plugin.GetType(pluginName));
         }
     }
 }

@@ -51,6 +51,8 @@ namespace hz
             this.btnBrokenLine = new System.Windows.Forms.Button();
             this.btnLine = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.PluginButton = new System.Windows.Forms.Button();
+            this.PluginComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNumOfCorners)).BeginInit();
@@ -74,6 +76,8 @@ namespace hz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(204)))), ((int)(((byte)(223)))));
+            this.panel1.Controls.Add(this.PluginComboBox);
+            this.panel1.Controls.Add(this.PluginButton);
             this.panel1.Controls.Add(this.btnRedo);
             this.panel1.Controls.Add(this.btnUndo);
             this.panel1.Controls.Add(this.btnSimplePolygon);
@@ -99,7 +103,7 @@ namespace hz
             // 
             // btnRedo
             // 
-            this.btnRedo.Location = new System.Drawing.Point(1141, 49);
+            this.btnRedo.Location = new System.Drawing.Point(1157, 55);
             this.btnRedo.Name = "btnRedo";
             this.btnRedo.Size = new System.Drawing.Size(89, 31);
             this.btnRedo.TabIndex = 17;
@@ -109,7 +113,7 @@ namespace hz
             // 
             // btnUndo
             // 
-            this.btnUndo.Location = new System.Drawing.Point(1141, 12);
+            this.btnUndo.Location = new System.Drawing.Point(1158, 11);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(89, 31);
             this.btnUndo.TabIndex = 16;
@@ -164,7 +168,7 @@ namespace hz
             // 
             // butDeserializ
             // 
-            this.butDeserializ.Location = new System.Drawing.Point(941, 49);
+            this.butDeserializ.Location = new System.Drawing.Point(860, 52);
             this.butDeserializ.Name = "butDeserializ";
             this.butDeserializ.Size = new System.Drawing.Size(143, 34);
             this.butDeserializ.TabIndex = 10;
@@ -174,7 +178,7 @@ namespace hz
             // 
             // butSerializ
             // 
-            this.butSerializ.Location = new System.Drawing.Point(941, 9);
+            this.butSerializ.Location = new System.Drawing.Point(860, 9);
             this.butSerializ.Name = "butSerializ";
             this.butSerializ.Size = new System.Drawing.Size(143, 34);
             this.butSerializ.TabIndex = 9;
@@ -285,6 +289,25 @@ namespace hz
             this.btnLine.UseVisualStyleBackColor = true;
             this.btnLine.Click += new System.EventHandler(this.btnLine_Click);
             // 
+            // PluginButton
+            // 
+            this.PluginButton.Location = new System.Drawing.Point(1009, 10);
+            this.PluginButton.Name = "PluginButton";
+            this.PluginButton.Size = new System.Drawing.Size(143, 34);
+            this.PluginButton.TabIndex = 18;
+            this.PluginButton.Text = "New Plugin";
+            this.PluginButton.UseVisualStyleBackColor = true;
+            this.PluginButton.Click += new System.EventHandler(this.PluginButtonn_Click);
+            // 
+            // PluginComboBox
+            // 
+            this.PluginComboBox.FormattingEnabled = true;
+            this.PluginComboBox.Location = new System.Drawing.Point(1010, 52);
+            this.PluginComboBox.Name = "PluginComboBox";
+            this.PluginComboBox.Size = new System.Drawing.Size(142, 33);
+            this.PluginComboBox.TabIndex = 19;
+            this.PluginComboBox.SelectedIndexChanged += new System.EventHandler(this.PluginComboBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -330,6 +353,8 @@ namespace hz
         private System.Windows.Forms.Button btnSimplePolygon;
         private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.Button PluginButton;
+        private System.Windows.Forms.ComboBox PluginComboBox;
     }
 }
 
