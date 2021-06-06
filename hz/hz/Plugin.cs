@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -22,18 +23,17 @@ namespace hz
             {
                 if (openFile.ShowDialog() == DialogResult.OK)
                 {
+                    name = Path.GetFileName(openFile.FileName);
+                    name = name.Substring(0, name.Length - 4);
+
                     Assembly plugin = Assembly.LoadFrom(openFile.FileName);
                     Type[] types = plugin.GetTypes();
 
                     foreach (Type currentPlugin in types)
                     {
-                        foreach (Attribute attribute in currentPlugin.GetCustomAttributes())
+                        if (typeof(ICreator).IsAssignableFrom(currentPlugin))
                         {
-                            if (attribute is FactoryAttribute factoryAttribute)
-                            {
-                                pluginDict.Add(factoryAttribute.ToolName, currentPlugin);
-                                name = factoryAttribute.ToolName;
-                            }
+                            pluginDict.Add(name, currentPlugin); 
                         }
                     }
                 }
